@@ -4,6 +4,6 @@ import { PageInfo } from './page-info.model';
 export interface Response {
   kind: string,
   etag: string,
-  pageInfo : PageInfo[],
+  pageInfo : PageInfo,
   items: ResponseItem[],
 }
