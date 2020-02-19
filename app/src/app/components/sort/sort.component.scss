@@ -1,0 +1,28 @@
+:host {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+span, button {
+  margin-right: 20px;
+}
+
+label span, button {
+  color: #2F80ED;
+}
+
+button {
+  background: none;
+  outline: none;
+  text-decoration: underline;
+}
+
+input:focus {
+  border: 1px solid #2F80ED;
+}
+
+.clicked {
+  text-decoration: none;
+  color: #5EA2FF;
+}

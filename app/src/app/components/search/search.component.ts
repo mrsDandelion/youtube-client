@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-search',
@@ -9,7 +9,13 @@ export class SearchComponent implements OnInit {
 
   constructor() { }
 
-  public ngOnInit(): void {
+  public handleSubmit(e: MouseEvent): void {
+    e.preventDefault();
+    this.searchItems.emit();
   }
 
+  public toggleSortFunc(): void {
+    this.isSortOpen = !this.isSortOpen;
+    this.toggleSort.emit(this.isSortOpen);
+  }
 }

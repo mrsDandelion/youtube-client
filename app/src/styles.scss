@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+  list-style-type: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+.yellow-border {
+  border-bottom: 5px solid yellow;
+}
+
+.green-border {
+  border-bottom: 5px solid green;
+}
+
+.blue-border {
+  border-bottom: 5px solid blue;
+}
+
+.red-border {
+  border-bottom: 5px solid red;
+}
+

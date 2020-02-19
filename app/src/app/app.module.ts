@@ -9,6 +9,9 @@ import { LoginComponent } from './components/login/login.component';
 import { ResultListComponent } from './components/result-list/result-list.component';
 import { ResultItemComponent } from './components/result-item/result-item.component';
 import { SortComponent } from './components/sort/sort.component';
+import { SortPipe } from './pipes/sort.pipe';
+import { FormsModule } from '@angular/forms';
+import { BorderColorDirective } from './directives/border-color.directive';
 
 @NgModule({
   declarations: [
@@ -19,10 +22,13 @@ import { SortComponent } from './components/sort/sort.component';
     ResultListComponent,
     ResultItemComponent,
     SortComponent,
+    SortPipe,
+    BorderColorDirective,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
