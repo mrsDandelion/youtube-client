@@ -5,8 +5,12 @@ import {Component, Output, EventEmitter} from '@angular/core';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent {
 
+  @Output() public toggleSort: EventEmitter<boolean> = new EventEmitter();
+  @Output() public searchItems: EventEmitter<undefined> = new EventEmitter();
+
+  public isSortOpen: boolean = false;
   constructor() { }
 
   public handleSubmit(e: MouseEvent): void {
