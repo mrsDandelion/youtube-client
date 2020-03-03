@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { ResponseItem } from '../models/response-item.model';
+import { ResponseItem } from '../../models/response-item.model';
 
 @Pipe({
   name: 'sort',

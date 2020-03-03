@@ -3,6 +3,6 @@
   <button type="button" (click)="handleSortItems('date')" [ngClass]="{clicked: isClickedDateSort}">date</button>
   <button type="button" (click)="handleSortItems('view')" [ngClass]="{clicked: isClickedViewSort}">count of views</button>
   <label>
-    <span>by word or sentance</span> <input type="text" name="sortWords" (input)=handleSortItems() [(ngModel)]="sortWords" />
+    <span>by word or sentance</span> <input type="text" name="sortWords" (input)=handleSortItems() />
   </label>
 </form>

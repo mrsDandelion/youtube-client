@@ -1,0 +1,25 @@
+<li [BorderColorDirective]="item.snippet.publishedAt">
+  <div>
+    <img src="{{item.snippet.thumbnails.medium.url}}" class="item-img" alt="more...">
+    <p>
+      <span>
+        <img src="../../../../assets/icon-view.svg" alt="">
+        {{item.statistics.viewCount}}
+      </span>
+      <span>
+        <img src="../../../../assets/icon-like.svg" alt="">
+        {{item.statistics.likeCount}}
+      </span>
+      <span>
+        <img src="../../../../assets/icon-dislike.svg" alt="">
+        {{item.statistics.dislikeCount}}
+      </span>
+      <span>
+        <img src="../../../../assets/icon-comments.svg" alt="">
+        {{item.statistics.commentCount}}
+      </span>
+    </p>
+    <h3>{{item.snippet.title}}</h3>
+  </div>
+  <button type="button">more...</button>
+</li>

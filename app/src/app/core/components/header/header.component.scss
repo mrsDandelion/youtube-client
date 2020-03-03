@@ -1,0 +1,29 @@
+:host {
+  width: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  background: #E5E5E5;
+
+  .header-content {
+    display: flex;
+    flex-direction: column;
+    width: 1142px;
+
+    img {
+      margin-right: 10px;
+    }
+  }
+
+  .header-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    div {
+      display: flex;
+    }
+  }
+}

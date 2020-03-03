@@ -15,8 +15,4 @@ export class HeaderComponent {
   public toggleSort(isOpen: boolean): void {
     this.isSortOpen = isOpen;
   }
-
-  public handleSort([typeSort, sortWords]: string[]): void {
-    this.sortItems.emit([typeSort, sortWords]);
-  }
 }

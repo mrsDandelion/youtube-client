@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { responce } from './mock-responce';
-import { ResponseItem } from './models/response-item.model';
 
 @Component({
   selector: 'app-root',
