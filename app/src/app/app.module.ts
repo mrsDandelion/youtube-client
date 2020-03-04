@@ -8,7 +8,7 @@ import { YoutubeModule } from './youtube/youtube.module';
 import { CoreModule } from './core/core.module';
 
 @NgModule({
-  declarations: [],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

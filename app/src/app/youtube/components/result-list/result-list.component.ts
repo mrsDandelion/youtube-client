@@ -8,18 +8,17 @@ import { YoutubeService } from '../../services/youtube.service';
   styleUrls: ['./result-list.component.scss'],
 })
 export class ResultListComponent {
-  public items: ResponseItem[];
-  public typeSort: string;
+  public items;
+
+  public itemsObservable = this.youtubeService.getResponce().subscribe(
+    (result) => {
+      this.items = result;
+    }
+  );
+
+  public typeSort: string = this.youtubeService.getTypeSort();
   public sortWords: string;
   @Output() public getResponse: EventEmitter<undefined> = new EventEmitter();
 
   constructor(private youtubeService: YoutubeService) { }
-
-  getItems() {
-    this.items = this.youtubeService.getResponce().items;
-  }
-
-  getSort() {
-    this.typeSort = this.youtubeService.getTypeSort();
-  }
 }

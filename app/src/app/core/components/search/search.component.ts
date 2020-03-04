@@ -1,4 +1,5 @@
 import {Component, Output, EventEmitter} from '@angular/core';
+import { YoutubeService } from '../../../youtube/services/youtube.service';
 
 @Component({
   selector: 'app-search',
@@ -8,14 +9,13 @@ import {Component, Output, EventEmitter} from '@angular/core';
 export class SearchComponent {
 
   @Output() public toggleSort: EventEmitter<boolean> = new EventEmitter();
-  @Output() public searchItems: EventEmitter<undefined> = new EventEmitter();
 
   public isSortOpen: boolean = false;
-  constructor() { }
+  constructor(private youtubeService: YoutubeService) { }
 
   public handleSubmit(e: MouseEvent): void {
     e.preventDefault();
-    this.searchItems.emit();
+    this.youtubeService.createResponce();
   }
 
   public toggleSortFunc(): void {

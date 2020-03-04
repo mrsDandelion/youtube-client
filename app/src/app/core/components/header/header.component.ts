@@ -1,4 +1,4 @@
-import {Component, ViewChild, ElementRef, Output, EventEmitter} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +6,6 @@ import {Component, ViewChild, ElementRef, Output, EventEmitter} from '@angular/c
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  @Output() public searchResponseItems: EventEmitter<undefined> = new EventEmitter();
-  @Output() public sortItems: EventEmitter<string[]> = new EventEmitter();
-  @ViewChild('sort') public sortRef: ElementRef;
-
   public isSortOpen: boolean = false;
 
   public toggleSort(isOpen: boolean): void {
