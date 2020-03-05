@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { YoutubeModule } from './youtube/youtube.module';
 import { CoreModule } from './core/core.module';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, NotFoundComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
