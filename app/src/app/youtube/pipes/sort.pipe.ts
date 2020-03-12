@@ -8,6 +8,7 @@ import { ResponseItem } from '../../models/response-item.model';
 export class SortPipe implements PipeTransform {
 
   public transform(value: ResponseItem[], sortBy: string, words: string): ResponseItem[] {
+    console.log(value, sortBy, words);
     if (value && value.length) {
       let result: ResponseItem[];
       if (words) {

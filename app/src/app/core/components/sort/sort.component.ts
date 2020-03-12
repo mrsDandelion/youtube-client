@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Output} from '@angular/core';
+import { YoutubeService } from "../../../youtube/services/youtube.service";
 
 @Component({
   selector: 'app-sort',
@@ -6,15 +7,13 @@ import {Component, EventEmitter, Output} from '@angular/core';
   styleUrls: ['./sort.component.scss']
 })
 export class SortComponent {
-
-  @Output() public sortItems: EventEmitter<string[]> = new EventEmitter();
   public sortWords: string;
+  public sortType: string;
 
   public isClickedDateSort: boolean = false;
   public isClickedViewSort: boolean = false;
-  public sortType: string;
 
-  constructor() { }
+  constructor(private youtubeService: YoutubeService) { }
 
   public handleSortItems(type?: string): void {
     if (type) {
@@ -27,6 +26,7 @@ export class SortComponent {
       }
       this.sortType = type;
     }
-    this.sortItems.emit([this.sortType, this.sortWords]);
+    this.youtubeService.typeSort$.next(type);
+    this.youtubeService.wordSort$.next(this.sortWords);
   }
 }

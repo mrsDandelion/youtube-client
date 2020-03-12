@@ -15,7 +15,7 @@ export class SearchComponent {
 
   public handleSubmit(e: MouseEvent): void {
     e.preventDefault();
-    this.youtubeService.createResponce();
+    this.youtubeService.getResponce();
   }
 
   public toggleSortFunc(): void {
