@@ -1,5 +1,5 @@
 <form (submit)="handleSubmit($event)">
-  <input type="text">
+  <input type="text" name="searchWords" [(ngModel)]="searchWords">
   <input type="submit" value="search">
   <button type="button" (click)="toggleSortFunc()"><img src="../../../../assets/icon-sort.svg"></button>
 </form>

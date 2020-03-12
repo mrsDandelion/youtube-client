@@ -11,11 +11,12 @@ export class SearchComponent {
   @Output() public toggleSort: EventEmitter<boolean> = new EventEmitter();
 
   public isSortOpen: boolean = false;
+  public searchWords: string = '';
   constructor(private youtubeService: YoutubeService) { }
 
   public handleSubmit(e: MouseEvent): void {
     e.preventDefault();
-    this.youtubeService.getResponce();
+    this.youtubeService.getResponce(this.searchWords);
   }
 
   public toggleSortFunc(): void {

@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { responce } from './mock-responce';
 import { ResponseItem } from '../../models/response-item.model';
-import {EMPTY, Observable, Subject} from 'rxjs';
-import { catchError, tap, map } from 'rxjs/operators';
+import {EMPTY, Subject} from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
@@ -21,19 +20,23 @@ export class YoutubeService {
     return `https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBX6pm0Nk4NmekQ3afH7lFVfnairTTFx_s&id=nq4AIzaSyBX6pm0Nk4NmekQ3afH7lFVfnairTTFx_saU9gmZQk,${ids}&part=snippet,statistics`
   }
 
-  getResponce() {
-    return this.http.get(this.getUrl('js')).pipe(
-      catchError((error) => {
-        console.error('[ERROR]', error);
-        return EMPTY;
-      }),
-    ).subscribe((result: any) => {
-      const arrayId = result.items.map(item => item.id.videoId);
-      this.http.get(this.getUrlStatistic(arrayId.join(','))).subscribe(
-        (statisticsResult) => {
-          this.response$.next(statisticsResult);
-        }
-      );
-    });
+  getResponce(searchWords: string) {
+    if (searchWords) {
+      return this.http.get(this.getUrl(searchWords)).pipe(
+        catchError((error) => {
+          console.error('[ERROR]', error);
+          return EMPTY;
+        }),
+      ).subscribe((result: any) => {
+        const arrayId = result.items.map(item => item.id.videoId);
+        this.http.get(this.getUrlStatistic(arrayId.join(','))).subscribe(
+          (statisticsResult) => {
+            this.response$.next(statisticsResult);
+          }
+        );
+      });
+    } else {
+      this.response$.next([]);
+    }
   }
 }
